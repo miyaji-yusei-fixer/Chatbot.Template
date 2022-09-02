@@ -12,6 +12,8 @@
       "env": {
         "FLASK_APP": "app.py",
         "FLASK_ENV": "development",
+        "LINEMESSAGING_CHANNEL_ACCESS_TOKEN": "VVwQLeoM+Tt2bBYrCiDS53Lr7/UhLwhLJEoGn0R1BdxIPc/hIt4iyN7tyX5EWKRccDq+IqiCIdY7dJD2E38pn4mPf8x7I1lD2QLMf3FBly1R1R8Y4HQi5G/U0MRUuv/yOuFewKwmta3drrZY66yhtgdB04t89/1O/w1cDnyilFU=",
+        "LINEMESSAGING_CHANNEL_SECRET": "d0cfa840342b889f87bc7a10b7f3f75e"
       },
       "args": [
         "run",

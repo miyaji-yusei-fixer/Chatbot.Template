@@ -64,9 +64,17 @@ def webhook_callback(request):
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text=event.message.text))
+    reply_messages = scenario_manager.handle_line_webhook_event(event, "text_message")
+    try:
+        if type(reply_messages) == str\
+            and 'do_not_send_message' in reply_messages:
+            return
+        line_bot_api.reply_message(
+            event.reply_token,
+            reply_messages
+        )
+    except LineBotApiError as line_api_error:
+        pass
 
 if __name__ == '__main__':
    app.run()
